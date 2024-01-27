@@ -1,0 +1,29 @@
+{
+  "name": "parrot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "node server/index.js",
+    "client": "vite --config client/vite.config.ts",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "generate-ssl": "openssl genrsa -out server/ssl/localhost-key.pem 2048 && openssl req -new -x509 -sha256 -key server/ssl/localhost-key.pem -out server/ssl/localhost.pem -days 365"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-http-proxy": "^2.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vite": "^5.0.12"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18"
+  }
+}
